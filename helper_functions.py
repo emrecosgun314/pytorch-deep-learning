@@ -230,11 +230,11 @@ def pred_and_plot_image(
         target_image.squeeze().permute(1, 2, 0)
     )  # make sure it's the right size for matplotlib
     if class_names:
-        title = f"Pred: {class_names[target_image_pred_label.cpu()]} | Prob: {target_image_pred_probs.max().cpu():.3f}"
+        title = f"Pred: {class_names[target_image_pred_label.cpu().item()]} | Prob: {target_image_pred_probs.max().cpu():.3f}"
     else:
         title = f"Pred: {target_image_pred_label} | Prob: {target_image_pred_probs.max().cpu():.3f}"
     plt.title(title)
-    plt.axis(False)
+    plt.axis("off")
 
 def set_seeds(seed: int=42):
     """Sets random sets for torch operations.

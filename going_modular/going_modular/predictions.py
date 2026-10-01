@@ -77,7 +77,7 @@ def pred_and_plot_image(
     plt.figure()
     plt.imshow(img)
     plt.title(
-        f"Pred: {class_names[target_image_pred_label]} | Prob: {target_image_pred_probs.max():.3f}"
+        f"Pred: {class_names[target_image_pred_label.cpu().item()]} | Prob: {target_image_pred_probs.max():.3f}"
     )
-    plt.axis(False)
+    plt.axis("off")
 
